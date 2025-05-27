@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e2f;
+  padding: 15px 30px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+}
+
+.navbar-profile img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #ffffff88;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.navbar-profile img:hover {
+  transform: scale(1.05);
+}

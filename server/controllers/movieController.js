@@ -13,6 +13,7 @@ const addMovies = async (req, res) => {
     await movie.save();
     console.log(movie);
     return res.status(201).json({
+      success: true,
       mesagge: "Movie added successfully",
     });
   } catch (error) {
@@ -70,4 +71,11 @@ const deleteMovie = async (req, res) => {
   }
 };
 
-export { addMovies, updateMovie, deleteMovie };
+const getmovies = async (req, res) => {
+  try {
+    let movies = await movieModel.find({});
+
+    res.send(movies);
+  } catch (error) {}
+};
+export { addMovies, updateMovie, deleteMovie, getmovies };
