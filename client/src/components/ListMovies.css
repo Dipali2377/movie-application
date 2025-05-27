@@ -1,80 +1,190 @@
 .list-movies-container {
-  padding: 2rem;
-  background-color: #f4f4f4;
+  padding: 40px;
+  background: linear-gradient(to right, #e0f7fa, #fff);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
 }
 
 .list-movies-heading {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #222;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #2c3e50;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
 .movie-box {
-  background-color: #fff;
-  border: 2px solid #ddd;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: 0.3s ease;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 0.5s ease-in-out;
 }
 
 .movie-box:hover {
-  border-color: #aaa;
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .movie-poster {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .movie-details {
-  padding: 1rem;
-  flex-grow: 1;
+  padding: 20px;
+  color: #2c3e50;
 }
 
 .movie-details h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .movie-details p {
-  margin: 0.25rem 0;
+  margin: 6px 0;
   font-size: 0.95rem;
-  color: #555;
+  color: #34495e;
 }
 
 .movie-actions {
   display: flex;
   justify-content: space-around;
-  padding: 1rem;
-  border-top: 1px solid #eee;
+  padding: 15px 20px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .btn {
-  padding: 0.5rem 1rem;
+  padding: 10px 18px;
   border: none;
-  border-radius: 4px;
-  font-weight: 600;
+  border-radius: 8px;
+  font-weight: 500;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn.update {
-  background-color: #2196f3;
+  background-color: #27ae60;
   color: #fff;
 }
 
+.btn.update:hover {
+  background-color: #1e8449;
+  transform: translateY(-2px);
+}
+
 .btn.delete {
-  background-color: #f44336;
+  background-color: #e74c3c;
   color: #fff;
+}
+
+.btn.delete:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.list-movies-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.add-movie-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  float: right;
+  margin-left: 1300px;
+}
+
+.add-movie-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.enhanced-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-sort-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.movie-search,
+.movie-sort {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.movie-sort {
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 1200px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .movie-actions {
+    flex-direction: column;
+  }
 }

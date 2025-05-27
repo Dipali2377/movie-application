@@ -38,6 +38,7 @@ const updateMovie = async (req, res) => {
     }
 
     res.status(200).json({
+      success: true,
       message: "Movie updated successfully",
       movie: updatedMovie,
     });
