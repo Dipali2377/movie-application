@@ -7,11 +7,11 @@ It allows users to **add**, **view**, **edit**, and **delete** movies, as well a
 
 ## 🚀 Features
 
-- ✅ Add a new movie (title, genre, rating, release year)
+- ✅ Add a new movie (title, genre, rating)
 - 📝 Edit movie details
 - ❌ Delete movies
-- 🔍 Search movies by title or genre
-- ↕️ Sort movies by title, rating, or release year
+- 🔍 Search movies by title
+- ↕️ Sort movies by title, rating.
 - 📱 Responsive UI with React
 - 🌐 Deployed on Render
 
