@@ -4,7 +4,9 @@ import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import "./ListMovies.css";
-const baseURL = import.meta.env.VITE_API_BASE_URL;
+const baseURL =
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://movie-application-hlut.onrender.com";
 const ListMovies = () => {
   const [allMovies, setAllMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
