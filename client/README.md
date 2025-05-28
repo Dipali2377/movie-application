@@ -1,12 +1,60 @@
-# React + Vite
+# 🎬 MERN Movie Listing App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack Movie Listing application built with the **MERN stack** (MongoDB, Express.js, React, Node.js).  
+It allows users to **add**, **view**, **edit**, and **delete** movies, as well as **search** and **sort** them.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ Add a new movie (title, genre, rating, release year)
+- 📝 Edit movie details
+- ❌ Delete movies
+- 🔍 Search movies by title or genre
+- ↕️ Sort movies by title, rating, or release year
+- 📱 Responsive UI with React
+- 🌐 Deployed on Render
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔗 Live Demo
+
+---
+
+## 📂 Project Structure
+
+```
+movie-application/
+├── client/ # React frontend
+│ ├── public/
+│ └── src/
+│ ├── components/
+│ ├── pages/
+│ └── App.js
+├── server/ # Express backend
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ └── index.js
+└── README.md
+
+
+
+```
+
+## ⚙️ Installation & Setup (Local Development)
+
+### Prerequisites
+
+- Node.js (v14 or above)
+- MongoDB (Atlas or local)
+- Git
+
+---
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Dipali2377/movie-application.git
+cd movie-application
+```
