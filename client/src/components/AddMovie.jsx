@@ -4,6 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 const AddMovie = () => {
   const [image, setImage] = useState(false);
   const [movieDetails, setMovieDetails] = useState({
@@ -33,7 +35,7 @@ const AddMovie = () => {
       formData.append("movie", image);
 
       const uploadResponse = await axios.post(
-        "http://localhost:5050/upload",
+        `http://${baseURL}/upload`,
         formData,
         {
           headers: {
@@ -46,7 +48,7 @@ const AddMovie = () => {
         movie.image = uploadResponse.data.image_url;
 
         const movieResponse = await axios.post(
-          "http://localhost:5050/movies/addmovie",
+          `http://${baseURL}/movies/addmovie`,
           movie
         );
 

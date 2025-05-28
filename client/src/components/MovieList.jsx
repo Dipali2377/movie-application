@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import "./ListMovies.css";
-
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 const ListMovies = () => {
   const [allMovies, setAllMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
@@ -14,9 +14,7 @@ const ListMovies = () => {
 
   const fetchInfo = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:5050/movies/allmovies"
-      );
+      const response = await axios.get(`http://${baseURL}/movies/allmovies`);
       setAllMovies(response.data);
       setFilteredMovies(response.data);
     } catch (error) {
@@ -48,7 +46,7 @@ const ListMovies = () => {
 
   const deleteMovie = async (id) => {
     try {
-      await axios.delete(`http://localhost:5050/movies/deletemovie/${id}`);
+      await axios.delete(`http://${baseURL}/movies/deletemovie/${id}`);
       toast.success("Movie deleted successfully");
       fetchInfo();
     } catch (error) {
