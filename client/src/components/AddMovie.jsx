@@ -4,7 +4,9 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const baseURL = import.meta.env.VITE_API_BASE_URL;
+const baseURL =
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://movie-application-hlut.onrender.com";
 
 const AddMovie = () => {
   const [image, setImage] = useState(false);
@@ -34,21 +36,17 @@ const AddMovie = () => {
       let formData = new FormData();
       formData.append("movie", image);
 
-      const uploadResponse = await axios.post(
-        `http://${baseURL}/upload`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const uploadResponse = await axios.post(`${baseURL}/upload`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       if (uploadResponse.data.success) {
         movie.image = uploadResponse.data.image_url;
 
         const movieResponse = await axios.post(
-          `http://${baseURL}/movies/addmovie`,
+          `${baseURL}/movies/addmovie`,
           movie
         );
 
