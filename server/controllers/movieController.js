@@ -2,6 +2,8 @@ import movieModel from "../models/movieModel.js";
 
 const addMovies = async (req, res) => {
   try {
+    console.log("Request Body:", req.body);
+
     const movie = new movieModel({
       title: req.body.title,
       description: req.body.description,

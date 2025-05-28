@@ -13,6 +13,8 @@ dontenv.config();
 const app = express(); // created express server
 
 const PORT = process.env.PORT || 5050;
+const BASE_IMAGE_URL =
+  process.env.BASE_IMAGE_URL || "https://movie-application-hlut.onrender.com";
 
 app.use(cors());
 
@@ -44,12 +46,10 @@ const upload = multer({ storage: storage }); //multer is middleware — it modif
 app.use("/images", express.static("upload/images"));
 
 app.post("/upload", upload.single("movie"), (req, res) => {
-  const imageUrl = `${req.protocol}://${req.get("host")}/images/${
-    req.file.filename
-  }`;
+  const imageHost = BASE_IMAGE_URL || `${req.protocol}://${req.get("host")}`;
   res.json({
     success: 1,
-    image_url: imageUrl,
+    image_url: `${imageHost}/images/${req.file.filename}`,
   });
 });
 
