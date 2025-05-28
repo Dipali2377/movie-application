@@ -4,6 +4,9 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "./UpdateMovie.css";
 
+const baseURL =
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://movie-application-hlut.onrender.com";
 const UpdateMovie = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -18,7 +21,7 @@ const UpdateMovie = () => {
   const updateMovie = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5050/movies/updatemovie/${movieDetails._id}`,
+        `${baseURL}/movies/updatemovie/${movieDetails._id}`,
         movieDetails
       );
       if (response.data.success || response.status === 200) {

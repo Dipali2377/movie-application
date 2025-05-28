@@ -44,9 +44,12 @@ const upload = multer({ storage: storage }); //multer is middleware — it modif
 app.use("/images", express.static("upload/images"));
 
 app.post("/upload", upload.single("movie"), (req, res) => {
+  const imageUrl = `${req.protocol}://${req.get("host")}/images/${
+    req.file.filename
+  }`;
   res.json({
     success: 1,
-    image_url: `http://localhost:${PORT}/images/${req.file.filename}`,
+    image_url: imageUrl,
   });
 });
 
