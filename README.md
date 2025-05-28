@@ -17,6 +17,12 @@ It allows users to **add**, **view**, **edit**, and **delete** movies, as well a
 
 ---
 
+## Preview
+
+![Movie Poster](./client/src/assets/movie_preview.jpeg);
+
+![Movie Poster](./client/src/assets/movie-preview1.jpeg)
+
 ## 🔗 Live Demo
 
 ## https://movies-app-dm.netlify.app/
