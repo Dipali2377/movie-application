@@ -4,9 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const baseURL =
-  import.meta.env.VITE_API_BASE_URL ||
-  "https://movie-application-hlut.onrender.com";
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 const AddMovie = () => {
   const [image, setImage] = useState(false);
