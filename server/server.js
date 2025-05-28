@@ -11,14 +11,10 @@ import movieRouter from "./routes/movieRoute.js";
 dontenv.config();
 
 const app = express(); // created express server
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://movies-app-dm.netlify.app/"],
-    credentials: true, // frontend and backend url
-  })
-);
 
 const PORT = process.env.PORT || 5050;
+
+app.use(cors());
 
 app.use(cookieParser());
 
