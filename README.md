@@ -19,7 +19,7 @@ It allows users to **add**, **view**, **edit**, and **delete** movies, as well a
 
 ## 🔗 Live Demo
 
----
+## https://movies-app-dm.netlify.app/
 
 ## 📂 Project Structure
 
